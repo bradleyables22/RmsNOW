@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using RmsNOW.Data;
 
 namespace RmsNOW.Areas.Identity.Data;
 
@@ -22,10 +23,16 @@ public class User : IdentityUser
     [Required]
     public bool IsActive { get; set; }
 
+    [Required]
+    public string UserType { get; set; } //if refugee or administratoin
+
+
+    //Relationships
+
     [ForeignKey("CampId")]
     public string? AssignedCamp { get; set; }
 
-
+    public Camp? Camp { get; set; }
 
 }
 

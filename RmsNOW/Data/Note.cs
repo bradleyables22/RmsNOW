@@ -7,12 +7,14 @@ namespace RmsNOW.Data
     {
         [Key]
         public int NoteID { get; set; }
-        [Required]
-        [ForeignKey("RefId")]
-        public string? RefugeeID { get; set; }
         public DateTime EntryDate { get; set; }
         public string? EnteredBy { get; set; }
+
         [StringLength(500)]
         public string? Message { get; set; }
+
+        [ForeignKey("CampID")]
+        public int RefId { get; set; }
+        public Refugee? Refugee { get; set; }
     }
 }

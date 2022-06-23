@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
+using RmsNOW.Areas.Identity.Data;
 namespace RmsNOW.Data
 {
     public class Camp
@@ -22,6 +22,7 @@ namespace RmsNOW.Data
         [Required]
         [ForeignKey("Id")]
         public string? CampManager { get; set; }
+        public User? user { get; set; }
 
     }
 }

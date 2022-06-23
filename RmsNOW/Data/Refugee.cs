@@ -23,11 +23,17 @@ namespace RmsNOW.Data
         public string? Healthstatus { get; set; }
         public int AggressionLvl { get; set; }
 
-        [Required]
+
+        //Relationships
+
         [ForeignKey("CampId")]
         public int CampID { get; set; }
-        [Required]
+        public Camp? Camp { get; set; }
+
         [ForeignKey("UnitId")]
         public int UnitID { get; set; }
+        public Unit? Unit { get; set; }
+
+        public List<Note>? Notes { get; set; }
     }
 }
